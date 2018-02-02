@@ -21,4 +21,8 @@ class CategoriesRepository extends BaseRepository implements CategoriesRepositor
     {
         $this->model = $categories;
     }
+    public function selectToArray()
+    {
+        return Categories::select('id','name','parent_id')->get()->toArray();
+    }
 }
